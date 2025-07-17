@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/tirolibre(/.*)?", "destination": "/" },
+    { "source": "/eit(/.*)?", "destination": "/" },
+    { "source": "/startup-builder(/.*)?", "destination": "/" }
+  ]
+}
