@@ -1,5 +1,6 @@
 // App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 import Sidebar from "./components/Sidebar";
@@ -20,16 +21,30 @@ import Signup from "./components/tirolibre/Signup";
 import UserAdminPanel from "./components/tirolibre/UserAdminPanel";
 import CarrieraFirestore from "./components/tirolibre/Carriera_firestore";
 
-import EITPage from "./components/EIT/EITPage"; // ✅ NUOVO COMPONENTE
+import EITPage from "./components/EIT/EITPage";
 
 import { UserProvider } from "./context/UserContext";
 import { LanguageProvider } from "./context/LanguageContext";
+
+function RedirectFromRoot() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/tirolibre", { replace: true });
+    }
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   return (
     <UserProvider>
       <LanguageProvider>
         <Router>
+          <RedirectFromRoot />
           <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
 
           <Routes>
@@ -39,7 +54,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/tirolibre/admin" element={<UserAdminPanel />} />
             <Route path="/profilo/:slug/carriera" element={<CarrieraFirestore />} />
-            <Route path="/eit" element={<EITPage />} /> {/* ✅ NUOVA ROUTE */}
+            <Route path="/eit" element={<EITPage />} />
 
             {/* Dashboard principale */}
             <Route
