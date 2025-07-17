@@ -58,19 +58,12 @@ function App() {
 
             {/* Dashboard principale */}
             <Route
-              path="/"
-              element={
-                <div className="flex bg-zinc-800 min-h-screen text-white">
-                  <Sidebar />
-                  <div className="flex flex-col flex-1">
-                    <Topbar />
-                    <main className="flex-1 overflow-y-auto p-4">
-                      <Dashboard />
-                    </main>
-                  </div>
-                </div>
-              }
-            />
+  path="/"
+  element={
+    <Navigate to="/tirolibre" replace />
+  }
+/>
+
 
             {/* Startup Builder */}
             <Route
