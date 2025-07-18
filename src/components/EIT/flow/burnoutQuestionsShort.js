@@ -42,14 +42,14 @@ export const burnoutQuestionsShort = {
     RP1: "Senti di riuscire a gestire efficacemente i problemi?",
     RP2: "Sei soddisfatto dei tuoi risultati?",
     options: [
-      "Mai",                               // 0
-      "Qualche volta all’anno",           // 1
-      "Una volta al mese o meno",         // 2
-      "Alcune volte al mese",             // 3
-      "Una volta a settimana",            // 4
-      "Alcune volte a settimana",         // 5
-      "Ogni giorno"                       // 6
-    ]
+  "Mai",
+  "Qualche volta all’anno",
+  "Una volta al mese o meno",
+  "Alcune volte al mese",
+  "Una volta a settimana",
+  "Alcune volte a settimana",
+  "Ogni giorno"
+]
   },
   tr: {
     EE1: "İşiniz yüzünden duygusal olarak tükenmiş hissediyor musunuz?",
