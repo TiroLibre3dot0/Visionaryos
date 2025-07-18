@@ -1,14 +1,8 @@
 {
   "redirects": [
     {
-      "source": "https://www.visionaryos.space/:path*",
-      "destination": "https://visionaryos.space/:path*",
-      "permanent": false,
-      "statusCode": 307
-    },
-    {
-      "source": "https://visionarios.vercel.app/:path*",
-      "destination": "https://visionaryos.space/:path*",
+      "source": "https://www.mindt.fit/:path*",
+      "destination": "https://mindt.fit/:path*",
       "permanent": false,
       "statusCode": 307
     }

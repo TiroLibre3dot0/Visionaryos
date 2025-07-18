@@ -1,4 +1,4 @@
-// src/components/EIT/flow/BurnoutFlow.jsx
+// src/components/Mindt/flow/BurnoutFlow.jsx
 
 import React, { useState } from 'react';
 import StepNavigation from './StepNavigation';

@@ -1,26 +1,26 @@
-// src/pages/admin/EITAdminProfiles.jsx
+// src/pages/admin/MindtAdminProfiles.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
 const mockProfiles = [
   {
     name: "Giulia Bianchi",
-    email: "giulia@eitwellness.org",
+    email: "giulia@Mindtwellness.org",
     status: "Complete",
     updated: "2025-07-10",
   },
   {
     name: "Marco Verdi",
-    email: "marco@eitwellness.org",
+    email: "marco@Mindtwellness.org",
     status: "Incomplete",
     updated: "2025-07-09",
   },
 ];
 
-const EITAdminProfiles = () => {
+const MindtAdminProfiles = () => {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">🧠 EITPanel – Public Profiles</h1>
+      <h1 className="text-2xl font-bold mb-6">🧠 MindtPanel – Public Profiles</h1>
 
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto text-left text-sm border border-zinc-700">
@@ -70,4 +70,4 @@ const EITAdminProfiles = () => {
   );
 };
 
-export default EITAdminProfiles;
+export default MindtAdminProfiles;

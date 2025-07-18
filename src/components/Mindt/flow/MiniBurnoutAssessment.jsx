@@ -1,4 +1,4 @@
-// src/components/EIT/flow/MiniBurnoutAssessment.jsx
+// src/components/Mindt/flow/MiniBurnoutAssessment.jsx
 import React, { useState, useContext } from "react";
 import { burnoutQuestionsShort as burnoutQuestions } from "./burnoutQuestionsShort";
 import { LanguageContext } from "../../../context/LanguageContext";

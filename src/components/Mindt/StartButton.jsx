@@ -1,4 +1,4 @@
-// src/components/EIT/StartButton.jsx
+// src/components/Mindt/StartButton.jsx
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 

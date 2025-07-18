@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
 
   // Logout automatico + rimuovi dati
   const logout = () => {
-    localStorage.removeItem("user");
+    localStorage.removMindtem("user");
     setUser(null);
   };
 

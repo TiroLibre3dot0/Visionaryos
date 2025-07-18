@@ -1,11 +1,11 @@
-// src/components/EIT/EITPage.jsx
+// src/components/Mindt/MindtPage.jsx
 import React, { useState } from "react";
 import BurnoutFlow from "./flow/BurnoutFlow";
 import LanguageSwitcher from "../LanguageSwitcher";
 import IntroText from "./IntroText";
 import { useLanguage } from "../../context/LanguageContext";
 
-const EITPage = () => {
+const MindtPage = () => {
   const [started, setStarted] = useState(false);
   const [loading, setLoading] = useState(false);
   const { language } = useLanguage();
@@ -45,4 +45,4 @@ const EITPage = () => {
   );
 };
 
-export default EITPage;
+export default MindtPage;

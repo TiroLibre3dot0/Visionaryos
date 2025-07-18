@@ -1,4 +1,4 @@
-// src/components/EIT/flow/burnoutQuestionsFull.js
+// src/components/Mindt/flow/burnoutQuestionsFull.js
 import { EE } from "./EmotionalExhaustionQuestions";
 import { DP } from "./DepersonalizationQuestions";
 import { RP } from "./PersonalAchievementQuestions";

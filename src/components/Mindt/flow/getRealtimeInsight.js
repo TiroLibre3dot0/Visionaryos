@@ -1,4 +1,4 @@
-// src/components/EIT/flow/getRealtimeInsight.js
+// src/components/Mindt/flow/getRealtimeInsight.js
 const getRealtimeInsight = async (question, lang, answer) => {
   try {
     const response = await fetch("http://localhost:3001/api/insight", {

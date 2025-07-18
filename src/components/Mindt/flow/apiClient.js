@@ -1,4 +1,4 @@
-// src/components/EIT/flow/apiClient.js
+// src/components/Mindt/flow/apiClient.js
 
 export const getInsightFromGPT = async ({ question, answer, language = "en" }) => {
   try {

@@ -9,11 +9,11 @@ const Sidebar = () => {
     { label: "Startup Builder", path: "/startup-builder", icon: "🚀" },
 
     {
-      label: "EIT Panel",
+      label: "Mindt Panel",
       icon: "🧠",
       children: [
-        { label: "EIT Home", path: "/EIT" },
-        { label: "EIT Admin", path: "/eit-admin" },
+        { label: "Mindt Home", path: "/Mindt" },
+        { label: "Mindt Admin", path: "/Mindt-admin" },
       ],
     },
 

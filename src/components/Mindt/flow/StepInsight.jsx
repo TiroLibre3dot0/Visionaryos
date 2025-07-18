@@ -1,4 +1,4 @@
-// src/components/EIT/flow/StepInsight.jsx
+// src/components/Mindt/flow/StepInsight.jsx
 
 import React from "react";
 

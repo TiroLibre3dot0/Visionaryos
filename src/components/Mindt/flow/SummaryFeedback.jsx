@@ -1,4 +1,4 @@
-// src/components/EIT/flow/SummaryFeedback.jsx
+// src/components/Mindt/flow/SummaryFeedback.jsx
 
 import React, { useEffect, useState } from "react";
 import { useLanguage } from "../../../context/LanguageContext";

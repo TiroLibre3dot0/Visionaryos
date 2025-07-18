@@ -33,12 +33,12 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* ✅ EIT Program */}
+        {/* ✅ Mindt Program */}
         <div className="bg-zinc-800 p-6 rounded-lg shadow">
-          <h2 className="text-xl font-bold text-white mb-2">EIT Program</h2>
-          <p className="text-gray-400 mb-4">Explore the gut-brain system and launch the EIT project.</p>
+          <h2 className="text-xl font-bold text-white mb-2">Mindt Program</h2>
+          <p className="text-gray-400 mb-4">Explore the gut-brain system and launch the Mindt project.</p>
           <button
-            onClick={() => navigate("/EITPanel")}
+            onClick={() => navigate("/MindtPanel")}
             className="bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded"
           >
             Open Project

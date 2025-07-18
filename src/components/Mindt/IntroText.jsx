@@ -1,4 +1,4 @@
-// src/components/EIT/IntroText.jsx
+// src/components/Mindt/IntroText.jsx
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import StartButton from "./StartButton";
@@ -25,7 +25,7 @@ const IntroText = ({ onStart }) => {
     it: {
       intro: (
         <>
-          Il programma <Keyword tone="orange">EIT</Keyword> ti aiuta a valutare il tuo livello di{" "}
+          Il programma <Keyword tone="orange">Mindt</Keyword> ti aiuta a valutare il tuo livello di{" "}
           <Keyword tone="brown">esaurimento emotivo</Keyword>,{" "}
           <Keyword tone="orange">stress lavorativo</Keyword> e{" "}
           <Keyword tone="brown">soddisfazione personale</Keyword>.
@@ -39,7 +39,7 @@ const IntroText = ({ onStart }) => {
     en: {
       intro: (
         <>
-          The <Keyword tone="orange">EIT</Keyword> program helps you assess your level of{" "}
+          The <Keyword tone="orange">Mindt</Keyword> program helps you assess your level of{" "}
           <Keyword tone="brown">emotional exhaustion</Keyword>,{" "}
           <Keyword tone="orange">work-related stress</Keyword> and{" "}
           <Keyword tone="brown">personal satisfaction</Keyword>.
@@ -53,7 +53,7 @@ const IntroText = ({ onStart }) => {
     es: {
       intro: (
         <>
-          El programa <Keyword tone="orange">EIT</Keyword> te ayuda a evaluar tu nivel de{" "}
+          El programa <Keyword tone="orange">Mindt</Keyword> te ayuda a evaluar tu nivel de{" "}
           <Keyword tone="brown">agotamiento emocional</Keyword>,{" "}
           <Keyword tone="orange">estrés laboral</Keyword> y{" "}
           <Keyword tone="brown">satisfacción personal</Keyword>.

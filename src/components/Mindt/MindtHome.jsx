@@ -1,4 +1,4 @@
-// src/components/EIT/EITHome.jsx
+// src/components/Mindt/MindtHome.jsx
 import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import StartButton from "./StartButton";
@@ -18,7 +18,7 @@ const translations = {
   },
 };
 
-const EITHome = ({ onStart }) => {
+const MindtHome = ({ onStart }) => {
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -30,4 +30,4 @@ const EITHome = ({ onStart }) => {
   );
 };
 
-export default EITHome;
+export default MindtHome;

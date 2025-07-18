@@ -8,7 +8,7 @@ const LogoutButton = ({ children }) => {
   const handleLogout = async () => {
     try {
       await auth.signOut();
-      localStorage.removeItem("user");
+      localStorage.removMindtem("user");
       navigate("/login");
     } catch (error) {
       console.error("Errore durante il logout:", error.message);

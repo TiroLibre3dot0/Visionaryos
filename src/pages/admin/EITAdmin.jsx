@@ -1,19 +1,19 @@
-// src/pages/admin/EITAdmin.jsx
+// src/pages/admin/MindtAdmin.jsx
 import React from "react";
 import { FaUserShield, FaTools, FaChartLine, FaUserEdit, FaRegClock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const EITAdmin = () => {
+const MindtAdmin = () => {
   const navigate = useNavigate();
 
   const handleProfilesClick = () => {
-    navigate("/eit-admin/profiles"); // Rotta che puoi definire in futuro
+    navigate("/Mindt-admin/profiles"); // Rotta che puoi definire in futuro
   };
 
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6 flex items-center gap-2">
-        🧠 EITPanel – Wellness Admin Dashboard
+        🧠 MindtPanel – Wellness Admin Dashboard
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -25,7 +25,7 @@ const EITAdmin = () => {
             <FaUserShield /> Public Profiles
           </h2>
           <p className="text-zinc-400 text-sm">
-            View and manage all user-created public profiles for the EIT program.
+            View and manage all user-created public profiles for the Mindt program.
           </p>
           <button className="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
             Open section
@@ -76,4 +76,4 @@ const EITAdmin = () => {
   );
 };
 
-export default EITAdmin;
+export default MindtAdmin;

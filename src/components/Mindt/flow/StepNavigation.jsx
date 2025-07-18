@@ -1,4 +1,4 @@
-// src/components/EIT/flow/StepNavigation.jsx
+// src/components/Mindt/flow/StepNavigation.jsx
 import React from "react";
 
 const StepNavigation = ({ onNext, onBack, isLast }) => {

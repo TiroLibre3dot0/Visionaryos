@@ -1,4 +1,4 @@
-// src/components/EIT/flow/InsightBox.jsx
+// src/components/Mindt/flow/InsightBox.jsx
 import React from "react";
 import { useLanguage } from "../../../context/LanguageContext";
 import { FaRegLightbulb } from "react-icons/fa";
