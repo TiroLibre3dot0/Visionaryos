@@ -1,7 +1,7 @@
 // src/components/EIT/flow/MiniBurnoutAssessment.jsx
 import React, { useState, useContext } from "react";
-import { burnoutQuestions } from "./burnoutQuestionsShort";
-import { LanguageContext } from "../../../context/LanguageContext"; // Da creare se non esiste
+import { burnoutQuestionsShort as burnoutQuestions } from "./burnoutQuestionsShort";
+import { LanguageContext } from "../../../context/LanguageContext";
 
 const MiniBurnoutAssessment = ({ onComplete }) => {
   const { language } = useContext(LanguageContext);
@@ -24,15 +24,18 @@ const MiniBurnoutAssessment = ({ onComplete }) => {
 
   return (
     <div className="p-4 bg-white rounded-xl shadow-md max-w-xl mx-auto text-gray-800">
-      <h2 className="text-xl font-semibold mb-4">
+      {/* DOMANDA */}
+      <h2 className="text-xl font-semibold mb-6 text-center">
         {q[questions[currentIndex]]}
       </h2>
-      <div className="flex flex-col space-y-3">
+
+      {/* RISPOSTE */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {q.options.map((label, index) => (
           <button
             key={index}
             onClick={() => handleAnswer(index)}
-            className="bg-zinc-100 hover:bg-zinc-200 py-2 px-4 rounded-lg text-left shadow"
+            className="bg-zinc-100 hover:bg-zinc-200 py-2 px-4 rounded-lg text-left text-sm sm:text-base shadow transition-all"
           >
             {label}
           </button>

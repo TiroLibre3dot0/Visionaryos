@@ -6,26 +6,23 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export async function generateInsight({ question, answer, lang = "en" }) {
   const prompt = `
-You are a burnout prevention assistant. You are helping a user reflect on their mental and emotional state.
+You are a concise burnout coach.
 
-The user answered the following question:
+The user was asked:
 "${question}"
 
-Their response was: "${answer}"
+They replied:
+"${answer}"
 
-Write a short, gentle and professional reflection (max 2-3 sentences) that:
-- Acknowledges the user's emotional state with empathy
-- Offers a neutral, grounded interpretation of the answer
-- Adds a brief comparative insight (e.g., how common this feeling is among other people in similar situations)
-- Mentions that recovery or improvement is possible with the right steps
-- Uses a calm, non-judgmental tone
+Write a short and warm reflection in ${lang}, strictly within 20 words.
 
-Use light data if needed (e.g., "1 in 3 people experience this", "Many people in high-pressure roles report similar symptoms").
+🟢 Tone: friendly, grounded, never generic.
+🔴 Do not mention other people, statistics, or what's common.
+✅ Focus only on this user’s answer.
+✨ Suggest one micro-action or thought, if relevant.
 
-Language: ${lang}
-Only return the final message. No extra explanations.
+Output only the message. No intro, no explanation.
 `;
-
 
   try {
     const response = await openai.chat.completions.create({

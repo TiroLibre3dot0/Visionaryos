@@ -1,4 +1,18 @@
 {
+  "redirects": [
+    {
+      "source": "https://www.visionaryos.space/:path*",
+      "destination": "https://visionaryos.space/:path*",
+      "permanent": false,
+      "statusCode": 307
+    },
+    {
+      "source": "https://visionarios.vercel.app/:path*",
+      "destination": "https://visionaryos.space/:path*",
+      "permanent": false,
+      "statusCode": 307
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
