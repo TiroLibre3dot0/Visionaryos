@@ -16,7 +16,7 @@ They replied:
 
 Write a short and warm reflection in ${lang}, strictly within 20 words.
 
-🟢 Tone: friendly, grounded, never generic.
+🟢 Tone: friendly, grounded, never generic and always proactive
 🔴 Do not mention other people, statistics, or what's common.
 ✅ Focus only on this user’s answer.
 ✨ Suggest one micro-action or thought, if relevant.
