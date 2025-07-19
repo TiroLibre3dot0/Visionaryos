@@ -1,7 +1,7 @@
 {
   "redirects": [
     {
-      "source": "https://www.mindt.fit/:path*",
+      "source": "/mindt/:path*",
       "destination": "https://mindt.fit/:path*",
       "permanent": false,
       "statusCode": 307
