@@ -16,7 +16,7 @@ const Dashboard = () => {
       external: true,
       path: "https://mindt.fit",
       color: "bg-pink-600 hover:bg-pink-700",
-      image: "/IMG/mindt-preview.png", // ✅ Preview image
+      image: "public/mindt-preview.png", // ✅ Preview image
     },
     {
       title: "TiroLibre 3.0",
