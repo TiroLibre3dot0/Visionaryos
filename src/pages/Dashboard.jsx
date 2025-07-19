@@ -11,13 +11,14 @@ const Dashboard = () => {
       color: "bg-emerald-600 hover:bg-emerald-700",
     },
     {
-      title: "Mindt Program",
-      description: "Percorso per il benessere psicofisico con AI e functional food.",
-      external: true,
-      path: "https://mindt.fit",
-      color: "bg-pink-600 hover:bg-pink-700",
-      image: "public/mindt-preview.png", // ✅ Preview image
-    },
+  title: "Mindt Program",
+  description: "Percorso per il benessere psicofisico con AI e functional food.",
+  external: true,
+  path: "https://mindt.fit",
+  color: "bg-pink-600 hover:bg-pink-700",
+  image: "/IMG/mindt-preview.png", // ✅ corretto
+},
+
     {
       title: "TiroLibre 3.0",
       description: "Gestione profili calcistici, visibilità, trattative e carriera.",
@@ -40,7 +41,7 @@ const Dashboard = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-40 object-cover rounded mb-4"
+                className="w-full h-32 md:h-40 object-cover rounded-lg mb-4"
               />
             )}
             <h2 className="text-xl font-bold text-white mb-2">{project.title}</h2>
