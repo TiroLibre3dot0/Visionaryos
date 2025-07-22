@@ -1,13 +1,19 @@
-// src/pages/admin/MindtAdmin.jsx
+// src/pages/admin/MindtAdmin.jsx 
 import React from "react";
-import { FaUserShield, FaTools, FaChartLine, FaUserEdit, FaRegClock } from "react-icons/fa";
+import {
+  FaUserShield,
+  FaTools,
+  FaChartLine,
+  FaUserEdit,
+  FaRegClock,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const MindtAdmin = () => {
   const navigate = useNavigate();
 
   const handleProfilesClick = () => {
-    navigate("/Mindt-admin/profiles"); // Rotta che puoi definire in futuro
+    navigate("/Mindt-admin/profiles");
   };
 
   return (
@@ -16,7 +22,8 @@ const MindtAdmin = () => {
         🧠 MindtPanel – Wellness Admin Dashboard
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Admin Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
         <div
           className="bg-zinc-800 p-4 rounded-lg hover:bg-zinc-700 cursor-pointer transition"
           onClick={handleProfilesClick}
@@ -29,6 +36,21 @@ const MindtAdmin = () => {
           </p>
           <button className="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
             Open section
+          </button>
+        </div>
+
+        <div
+          className="bg-zinc-800 p-4 rounded-lg hover:bg-zinc-700 cursor-pointer transition"
+          onClick={() => navigate("/Mindt-admin/kpi")}
+        >
+          <h2 className="text-lg font-semibold flex items-center gap-2 mb-2">
+            📊 Business Intelligence
+          </h2>
+          <p className="text-zinc-400 text-sm">
+            Visualizza KPI, click, view e metriche interattive delle CTA Mindt.
+          </p>
+          <button className="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
+            View KPI
           </button>
         </div>
 

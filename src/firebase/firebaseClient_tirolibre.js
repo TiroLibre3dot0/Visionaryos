@@ -1,6 +1,5 @@
-// src/firebase.js in Firebase is the Visionaryos Project
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+// src/firebase/firebaseClient.js
+import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -12,9 +11,8 @@ const firebaseConfig = {
   appId: "1:753579553280:web:47a2a949a473bcf23a5ee5"
 };
 
-// Inizializzazione Firebase
-const app = initializeApp(firebaseConfig);
+// ✅ Inizializza solo se non già inizializzata
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const db = getFirestore(app);
 
-// Export Auth e Firestore
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+export { db };

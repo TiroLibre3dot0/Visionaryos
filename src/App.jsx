@@ -13,6 +13,7 @@ import ProfilesPage from "./pages/admin/ProfilesPage";
 import MindtPanel from "./pages/admin/MindtPanel";
 import MindtAdmin from "./pages/admin/MindtAdmin";
 import MindtAdminProfiles from "./pages/admin/MindtAdminProfiles";
+import KPIDashboard from "./pages/admin/KPIDashboard"; // ✅ nuova importazione
 
 import TirolibreEntry from "./components/tirolibre/TirolibreEntry";
 import Login from "./components/tirolibre/Login";
@@ -134,6 +135,22 @@ function App() {
                     <Topbar />
                     <main className="flex-1 overflow-y-auto p-4">
                       <MindtAdminProfiles />
+                    </main>
+                  </div>
+                </div>
+              }
+            />
+
+            {/* ✅ Nuova rotta KPI */}
+            <Route
+              path="/mindt-admin/kpi"
+              element={
+                <div className="flex bg-zinc-800 min-h-screen text-white">
+                  <Sidebar />
+                  <div className="flex flex-col flex-1">
+                    <Topbar />
+                    <main className="flex-1 overflow-y-auto p-4">
+                      <KPIDashboard />
                     </main>
                   </div>
                 </div>
