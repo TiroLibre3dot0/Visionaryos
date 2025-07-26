@@ -16,7 +16,7 @@ app.use(express.json());
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-// ✅ Endpoint 1: Genera riepilogo carriera (già esistente)
+// ✅ Endpoint 1: Riepilogo carriera
 app.post("/api/generate-career-summary", async (req, res) => {
   const { esperienze, ruolo } = req.body;
 
@@ -24,27 +24,45 @@ app.post("/api/generate-career-summary", async (req, res) => {
     const summary = await generateCareerSummary(esperienze, ruolo);
     res.json({ summary });
   } catch (error) {
-    console.error("Errore generazione:", error.message);
+    console.error("❌ Errore generazione carriera:", error.message);
     res.status(500).json({ error: "Errore generazione" });
   }
 });
 
-// ✅ Endpoint 2: Genera insight per burnout
+// ✅ Endpoint 2: Insight per singola risposta
 app.post("/api/insight", async (req, res) => {
   const { question, answer, lang } = req.body;
+
+  if (!question || !answer) {
+    return res.status(400).json({ error: "Domanda o risposta mancanti" });
+  }
 
   try {
     const insight = await generateInsight({ question, answer, lang });
     res.json({ insight });
   } catch (error) {
-    console.error("Errore API Insight:", error.message);
+    console.error("❌ Errore API Insight:", error.message);
     res.status(500).json({ error: "Insight generation failed" });
   }
 });
 
-// ✅ Endpoint 3: Genera feedback riassuntivo finale
+// ✅ Endpoint 3: Feedback riassuntivo finale
 app.post("/api/final-summary", async (req, res) => {
   const { answers, insights, lang } = req.body;
+
+  if (!Array.isArray(answers) || answers.length === 0) {
+    return res.status(400).json({ error: "Risposte mancanti o vuote" });
+  }
+
+  if (!Array.isArray(insights) || insights.length === 0) {
+    return res.status(400).json({ error: "Feedback intermedi mancanti o vuoti" });
+  }
+
+  // Log di debug
+  console.log("📥 FINAL SUMMARY REQUEST:");
+  console.log("🧠 Answers:", answers);
+  console.log("💡 Insights:", insights);
+  console.log("🌍 Language:", lang);
 
   const userPrompt = `
 ${lang === "it" ? `Analizza il seguente percorso di un utente che ha appena completato un test sul burnout.` : `Analyze the following user journey that has just completed a burnout test.`}
@@ -56,8 +74,8 @@ ${lang === "it" ? `Questi sono i feedback parziali:` : `These are the intermedia
 ${insights.map((txt, i) => `Step ${i + 1}: ${txt}`).join("\n")}
 
 ${lang === "it"
-? `Scrivi un unico feedback riassuntivo finale, chiaro, sintetico (max 10 righe), utile e con tono amichevole. Non essere generico o troppo formale. Concentrati sui punti reali emersi nel percorso e indica, se necessario, una direzione concreta per migliorare. Evita frasi troppo generiche.`
-: `Write a single final summary, friendly and concise (max 10 lines), clearly focused on the actual responses. Avoid generalities. Be helpful, grounded, and offer concrete next steps if needed. Do not overexplain.`}
+    ? `Scrivi un unico feedback riassuntivo finale, chiaro, sintetico (max 10 righe), utile e con tono amichevole. Non essere generico o troppo formale. Concentrati sui punti reali emersi nel percorso e indica, se necessario, una direzione concreta per migliorare. Evita frasi troppo generiche.`
+    : `Write a single final summary, friendly and concise (max 10 lines), clearly focused on the actual responses. Avoid generalities. Be helpful, grounded, and offer concrete next steps if needed. Do not overexplain.`}
 `;
 
   try {
@@ -76,9 +94,14 @@ ${lang === "it"
     });
 
     const summary = completion.choices[0]?.message?.content?.trim();
+
+    if (!summary) {
+      throw new Error("Risposta AI vuota");
+    }
+
     res.json({ summary });
   } catch (err) {
-    console.error("Errore generazione summary finale:", err.message);
+    console.error("❌ Errore generazione summary finale:", err.message);
     res.status(500).json({ error: "Errore generazione feedback finale" });
   }
 });
